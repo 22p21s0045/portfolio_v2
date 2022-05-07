@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Image from "next/image";
 import Linkin from "../styles/icon/Linkedin.svg";
+import Github from "../styles/icon/GitHub.svg";
 function Navbar() {
   const buttonstyle = {
     fontFamily: "Boogaloo",
@@ -55,7 +56,7 @@ function Navbar() {
               <Image src={Linkin} width={50} height={45} />
             </Button>
             <Button variant="text" sx={buttonstyle}>
-              <Image src={Linkin} width={50} height={45} />
+              <Image src={Github} width={50} height={45} />
             </Button>
           </Grid>
         </Grid>
