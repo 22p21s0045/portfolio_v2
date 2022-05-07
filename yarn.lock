@@ -378,6 +378,18 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.3.tgz#6801033be7ff87a6b7cadaf5b337c9f366a3c4b0"
   integrity sha512-WiBSI6JBIhC6LRIsB2Kwh8DsGTlbBU+mLRxJmAe3LjHTdkDpwIbEOZgoXBbZilk/vlfjK8i6nKRAvIRn1XaIMw==
 
+"@splinetool/react-spline@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@splinetool/react-spline/-/react-spline-2.1.0.tgz#4bbffd44a0c70c4ba44beafae669c18e168a3679"
+  integrity sha512-/LcIo2YO0WxgBaDVGOgxVwVzRr/PgHkq+fgDZ/S4syzF1WLGIlZwwBtn+hmT073sB3Uu62K0RfmRiHqCsOzFkg==
+
+"@splinetool/runtime@^0.9.42":
+  version "0.9.42"
+  resolved "https://registry.yarnpkg.com/@splinetool/runtime/-/runtime-0.9.42.tgz#87fc8060e8a515f4647858d0f2316968e24eed04"
+  integrity sha512-0UoDp5KYPbifIt8VtoDw1sTzxpiq+wZhz+x66NZBvG6BgkzFF+ozKoER0USIGjeoniqaXhWIaCkcL73zjECX+A==
+  dependencies:
+    on-change "^4.0.0"
+
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
@@ -1652,6 +1664,11 @@ object.values@^1.1.5:
     call-bind "^1.0.2"
     define-properties "^1.1.3"
     es-abstract "^1.19.1"
+
+on-change@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/on-change/-/on-change-4.0.0.tgz#26570babb7170f28be5ea0ba00a284a5a343a472"
+  integrity sha512-PTu7C9Jsz4b+sNMDpH0eZFTr7uxdOtoDWRnhaVNK50bgrrnW5nvbWI0jm5DG9qOoTnIhBzE9xoKVFPD9xgtbdg==
 
 once@^1.3.0:
   version "1.4.0"
