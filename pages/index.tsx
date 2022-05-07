@@ -11,8 +11,8 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Navbar />
-      <Grid container sx={{ marginTop: 20, marginLeft: 14 }}>
-        <Grid item xs={6}>
+      <Grid container sx={{ marginTop: 20 }}>
+        <Grid item xs={6} sx={{marginLeft: 14}}>
           <Box sx={{ fontFamily: "Boogaloo", fontSize: 76 }}>
             <Typewriter
               onInit={(typewriter) => {
