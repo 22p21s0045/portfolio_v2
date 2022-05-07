@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+@font-face {
+  font-family: 'Boogaloo';
+  src: url('/fonts/Boogaloo.ttf');
+}
