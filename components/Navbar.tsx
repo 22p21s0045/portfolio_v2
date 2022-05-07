@@ -21,50 +21,44 @@ function Navbar() {
   };
   return (
     <div>
-      <AppBar position="static" sx={{ backgroundColor: "transparent" }}>
-        
-          <Grid container spacing={2} justifyContent= "flex">
-            <Grid item>
-              <Button variant="text" sx={buttonstyle}>
-                Home
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button variant="text" sx={buttonstyle}>
-                About
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button variant="text" sx={buttonstyle}>
-                Skill
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button variant="text" sx={buttonstyle}>
-                Activity
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button variant="text" sx={buttonstyle}>
-                Checkout
-              </Button>
-            </Grid>
-            <Grid item sx={{marginLeft:40}} >
-              <Box display = 'flex' justifyContent = 'flex-end'>
-              
-              <Button variant="text" sx={buttonstyle}>
-                <Image src={Linkin} width={50} height={45} />
-              </Button>
-              <Button variant="text" sx={buttonstyle}>
-                <Image src={Linkin} width={50} height={45} />
-              </Button>
-              
-              </Box>
-              
-            </Grid>
-
+      <AppBar position="static" elevation = {0}sx={{ backgroundColor: "transparent",paddingTop:5 }}>
+        <Grid container spacing={2} justifyContent="flex">
+          <Grid item>
+            <Button variant="text" sx={buttonstyle}>
+              Home
+            </Button>
           </Grid>
-        
+          <Grid item>
+            <Button variant="text" sx={buttonstyle}>
+              About
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button variant="text" sx={buttonstyle}>
+              Skill
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button variant="text" sx={buttonstyle}>
+              Activity
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button variant="text" sx={buttonstyle}>
+              Checkout
+            </Button>
+          </Grid>
+        </Grid>
+        <Grid container spacing={2} justifyContent="flex-end" alignItems="center">
+          <Grid item>
+            <Button variant="text" sx={buttonstyle}>
+              <Image src={Linkin} width={50} height={45} />
+            </Button>
+            <Button variant="text" sx={buttonstyle}>
+              <Image src={Linkin} width={50} height={45} />
+            </Button>
+          </Grid>
+        </Grid>
       </AppBar>
     </div>
   );
