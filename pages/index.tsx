@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import Grid from "@mui/material/Grid";
 import Typewriter from "typewriter-effect";
 import Box from "@mui/material/Box";
+import Droll from "../styles/image/droll.svg";
 import Welcome from "../components/Welcome";
 import Room from "../components/Room";
 import { useEffect, useState } from "react";
@@ -72,11 +73,11 @@ const Home: NextPage = () => {
                 className="Hero"
               />
               <Box className="stats">
-                <Box sx={{ position: "relative" }}>
-                  <h1>Coding</h1>
+                <Box sx={{ position: "relative" ,marginLeft: "10%"}}>
+                  <h1 style={{fontFamily:"Boogaloo"}}>Coding</h1>
 
                   <ProgressBar
-                    completed={20}
+                    completed={30}
                     customLabel=" "
                     bgColor="#FF3D68"
                     width="50%"
@@ -84,31 +85,33 @@ const Home: NextPage = () => {
                     maxCompleted={100}
                   />
                 </Box>
-                <Box sx={{ position: "relative" }}>
-                  <h1>Design</h1>
+                <Box sx={{ position: "relative",marginLeft: "10%" }}>
+                  <h1 style={{fontFamily:"Boogaloo"}}>Design</h1>
 
                   <ProgressBar
-                    completed={20}
+                    completed={40}
                     customLabel=" "
-                    bgColor="#FF3D68"
+                    bgColor="#A73489"
                     width="50%"
                     labelColor="#e80909"
                     maxCompleted={100}
                   />
                 </Box>
-                <Box sx={{ position: "relative" }}>
-                  <h1>Business</h1>
+                <Box sx={{ position: "relative",marginLeft: "10%" }}>
+                  <h1 style={{fontFamily:"Boogaloo"}}>Business</h1>
 
                   <ProgressBar
-                    completed={20}
+                    completed={15}
                     customLabel=" "
-                    bgColor="#FF3D68"
+                    bgColor="#FAAD80"
                     width="50%"
                     labelColor="#e80909"
                     maxCompleted={100}
                   />
                 </Box>
+                <Image src={Droll} width={377} height={350} />
               </Box>
+              
             </Box>
           </motion.div>
         </Grid>
