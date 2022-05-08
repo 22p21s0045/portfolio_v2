@@ -8,17 +8,13 @@ import Grid from "@mui/material/Grid";
 import Typewriter from "typewriter-effect";
 import Box from "@mui/material/Box";
 import Welcome from "../components/Welcome";
-import { useEffect,useState } from "react";
+import Room from "../components/Room";
+import { useEffect, useState } from "react";
 const Home: NextPage = () => {
-  
   return (
     <div className={styles.container}>
       <Navbar />
-      <Typewriter
-              onInit={(typewriter) => {
-                typewriter.typeString("Welcome to my place").start();
-              }}
-            />
+
       <Grid container sx={{ marginTop: 20 }}>
         <Grid item xs={6} sx={{ marginLeft: 14 }}>
           <Box sx={{ fontFamily: "Boogaloo", fontSize: 76 }}>
@@ -35,25 +31,11 @@ const Home: NextPage = () => {
           </Box>
         </Grid>
       </Grid>
-      <Grid container>
-        <Grid item xs={12}>
-          <h1>Hello World!</h1>
-          <h1>Hello World!</h1>
-          <h1>Hello World!</h1>
-          <h1>Hello World!</h1>
-          <h1>Hello World!</h1>
-          <h1>Hello World!</h1>
-          <h1>Hello World!</h1>
-          <h1>Hello World!</h1>
-          <h1>Hello World!</h1>
-          <h1>Hello World!</h1>
-          <h1>Hello World!</h1>
-          <h1>Hello World!</h1>
-          <h1>Hello World!</h1>
-          <h1>Hello World!</h1>
-          <h1>Hello World!</h1>
-          </Grid>
-
+      <Grid container sx={{backgroundColor:"#50CB93"}}>
+        <Grid item xs={6}>
+          <Room/>
+          
+        </Grid>
       </Grid>
     </div>
   );
