@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import ProgressBar from "@ramonak/react-progress-bar";
 import Navbar from "../components/Navbar";
 import Grid from "@mui/material/Grid";
 import Typewriter from "typewriter-effect";
@@ -53,7 +53,7 @@ const Home: NextPage = () => {
       </Grid>
       <Grid container sx={{ backgroundColor: "#50CB93" }}>
         <Grid item lg={6}>
-          <Room />
+          {/* <Room /> */}
         </Grid>
         <Grid item>
           <motion.div animate={animation} ref={ref}>
@@ -63,6 +63,7 @@ const Home: NextPage = () => {
                 marginTop: 10,
                 transform: "rotate(15deg)",
               }}
+              className="Hero"
             >
               <Image
                 src="/hero.jpg"
@@ -70,6 +71,44 @@ const Home: NextPage = () => {
                 height={685}
                 className="Hero"
               />
+              <Box className="stats">
+                <Box sx={{ position: "relative" }}>
+                  <h1>Coding</h1>
+
+                  <ProgressBar
+                    completed={20}
+                    customLabel=" "
+                    bgColor="#FF3D68"
+                    width="50%"
+                    labelColor="#e80909"
+                    maxCompleted={100}
+                  />
+                </Box>
+                <Box sx={{ position: "relative" }}>
+                  <h1>Design</h1>
+
+                  <ProgressBar
+                    completed={20}
+                    customLabel=" "
+                    bgColor="#FF3D68"
+                    width="50%"
+                    labelColor="#e80909"
+                    maxCompleted={100}
+                  />
+                </Box>
+                <Box sx={{ position: "relative" }}>
+                  <h1>Business</h1>
+
+                  <ProgressBar
+                    completed={20}
+                    customLabel=" "
+                    bgColor="#FF3D68"
+                    width="50%"
+                    labelColor="#e80909"
+                    maxCompleted={100}
+                  />
+                </Box>
+              </Box>
             </Box>
           </motion.div>
         </Grid>
