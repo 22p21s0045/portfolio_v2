@@ -4,10 +4,10 @@ const Spline = dynamic(() => import('@splinetool/react-spline'), {
   ssr: false,
 });
 
-export default function App() {
+export default function Room() {
   return (
     <div>
-      <Spline scene="https://prod.spline.design/YdNXPKPis5ZEIXqR/scene.splinecode" />
+      <Spline scene="https://prod.spline.design/7tU2e6C1lxINwmuv/scene.splinecode" />
     </div>
   );
 }
