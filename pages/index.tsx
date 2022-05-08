@@ -10,7 +10,27 @@ import Box from "@mui/material/Box";
 import Welcome from "../components/Welcome";
 import Room from "../components/Room";
 import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
 const Home: NextPage = () => {
+  const animation = useAnimation();
+  const { ref, inView } = useInView();
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        scale: [1, 2, 2, 1, 1],
+        transition: {
+          duration: 1,
+        },
+      });
+    }
+    if (!inView) {
+      animation.start({
+        scale: [0.5, 1, 1, 0.5, 0.5],
+      });
+    }
+    console.log(inView);
+  }, [inView]);
   return (
     <div className={styles.container}>
       <Navbar />
@@ -35,10 +55,23 @@ const Home: NextPage = () => {
         <Grid item lg={6}>
           <Room />
         </Grid>
-        <Grid item >
-          <Box>
-             <Image src="/hero.jpg" width={620} height={695} /> 
+        <Grid item>
+          <motion.div animate={animation} ref={ref}>
+            <Box
+              sx={{
+                marginLeft: "10%",
+                marginTop: 10,
+                transform: "rotate(15deg)",
+              }}
+            >
+              <Image
+                src="/hero.jpg"
+                width={600}
+                height={685}
+                className="Hero"
+              />
             </Box>
+          </motion.div>
         </Grid>
       </Grid>
     </div>

@@ -18,3 +18,7 @@ a {
   font-family: 'Boogaloo';
   src: url('/fonts/Boogaloo.ttf');
 }
+.Hero{
+ border-radius: 20px;
+  
+}
