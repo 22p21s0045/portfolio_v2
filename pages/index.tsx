@@ -31,10 +31,14 @@ const Home: NextPage = () => {
           </Box>
         </Grid>
       </Grid>
-      <Grid container sx={{backgroundColor:"#50CB93"}}>
-        <Grid item xs={6}>
-          <Room/>
-          
+      <Grid container sx={{ backgroundColor: "#50CB93" }}>
+        <Grid item lg={6}>
+          <Room />
+        </Grid>
+        <Grid item >
+          <Box>
+             <Image src="/hero.jpg" width={620} height={695} /> 
+            </Box>
         </Grid>
       </Grid>
     </div>
