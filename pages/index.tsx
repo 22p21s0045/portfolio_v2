@@ -10,6 +10,7 @@ import Box from "@mui/material/Box";
 import Droll from "../styles/image/droll.svg";
 import Welcome from "../components/Welcome";
 import Room from "../components/Room";
+import Line from "../styles/svg/line.svg";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
@@ -33,7 +34,7 @@ const Home: NextPage = () => {
     console.log(inView);
   }, [inView]);
   return (
-    <div className={styles.container}>
+    <div>
       <Navbar />
 
       <Grid container sx={{ marginTop: 20 }}>
@@ -54,7 +55,7 @@ const Home: NextPage = () => {
       </Grid>
       <Grid container sx={{ backgroundColor: "#50CB93" }}>
         <Grid item lg={6}>
-          {/* <Room /> */}
+          {/* <Room />  */}
         </Grid>
         <Grid item>
           <motion.div animate={animation} ref={ref}>
@@ -73,8 +74,8 @@ const Home: NextPage = () => {
                 className="Hero"
               />
               <Box className="stats">
-                <Box sx={{ position: "relative" ,marginLeft: "10%"}}>
-                  <h1 style={{fontFamily:"Boogaloo"}}>Coding</h1>
+                <Box sx={{ position: "relative", marginLeft: "10%" }}>
+                  <h1 style={{ fontFamily: "Boogaloo" }}>Coding</h1>
 
                   <ProgressBar
                     completed={30}
@@ -85,8 +86,8 @@ const Home: NextPage = () => {
                     maxCompleted={100}
                   />
                 </Box>
-                <Box sx={{ position: "relative",marginLeft: "10%" }}>
-                  <h1 style={{fontFamily:"Boogaloo"}}>Design</h1>
+                <Box sx={{ position: "relative", marginLeft: "10%" }}>
+                  <h1 style={{ fontFamily: "Boogaloo" }}>Design</h1>
 
                   <ProgressBar
                     completed={40}
@@ -97,8 +98,8 @@ const Home: NextPage = () => {
                     maxCompleted={100}
                   />
                 </Box>
-                <Box sx={{ position: "relative",marginLeft: "10%" }}>
-                  <h1 style={{fontFamily:"Boogaloo"}}>Business</h1>
+                <Box sx={{ position: "relative", marginLeft: "10%" }}>
+                  <h1 style={{ fontFamily: "Boogaloo" }}>Business</h1>
 
                   <ProgressBar
                     completed={15}
@@ -111,11 +112,13 @@ const Home: NextPage = () => {
                 </Box>
                 <Image src={Droll} width={377} height={350} />
               </Box>
-              
             </Box>
+           
           </motion.div>
+         
         </Grid>
       </Grid>
+       
     </div>
   );
 };
