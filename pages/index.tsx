@@ -11,9 +11,12 @@ import Droll from "../styles/image/droll.svg";
 import Welcome from "../components/Welcome";
 import Room from "../components/Room";
 import Line from "../styles/svg/line.svg";
+import SunIcon from "../components/Line";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
+import { ParallaxProvider } from 'react-scroll-parallax';
+import { Parallax } from 'react-scroll-parallax';
 const Home: NextPage = () => {
   const animation = useAnimation();
   const { ref, inView } = useInView();
@@ -35,6 +38,7 @@ const Home: NextPage = () => {
   }, [inView]);
   return (
     <div>
+      <ParallaxProvider>
       <Navbar />
 
       <Grid container sx={{ marginTop: 20 }}>
@@ -57,7 +61,9 @@ const Home: NextPage = () => {
         <Grid item lg={6} xs={12} md={5}>
           <Room /> 
         </Grid>
+       
         <Grid item lg={6} xs={12} md ={6}>
+        <Parallax translateY={[20, -40]}>
           <motion.div animate={animation} ref={ref}>
             <Box
               sx={{
@@ -115,10 +121,11 @@ const Home: NextPage = () => {
             </Box>
            
           </motion.div>
-         
+          </Parallax>
         </Grid>
+        <SunIcon/>
       </Grid>
-       
+      </ParallaxProvider>
     </div>
   );
 };
