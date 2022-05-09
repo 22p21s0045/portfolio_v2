@@ -53,11 +53,11 @@ const Home: NextPage = () => {
           </Box>
         </Grid>
       </Grid>
-      <Grid container sx={{ backgroundColor: "#50CB93" }}>
-        <Grid item lg={6}>
-          {/* <Room />  */}
+      <Grid container sx={{ backgroundColor: "#50CB93" }} alignItems="center" justifyContent="center">
+        <Grid item lg={6} xs={12} md={5}>
+          <Room /> 
         </Grid>
-        <Grid item>
+        <Grid item lg={6} xs={12} md ={6}>
           <motion.div animate={animation} ref={ref}>
             <Box
               sx={{
