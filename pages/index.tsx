@@ -8,8 +8,9 @@ import Grid from "@mui/material/Grid";
 import Typewriter from "typewriter-effect";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import Stack from '@mui/material/Stack';
+import Stack from "@mui/material/Stack";
 import Droll from "../styles/image/droll.svg";
+import Plane from "../styles/svg/plane.svg";
 import Welcome from "../components/Welcome";
 import Room from "../components/Room";
 import { useEffect, useState } from "react";
@@ -130,18 +131,31 @@ const Home: NextPage = () => {
             </Parallax>
           </Grid>
         </Grid>
-        <Grid container sx={{ backgroundColor: "#ACFFAD" }}>
-          <Grid item xs={5}>
+        <Grid container sx={{ backgroundColor: "#ACFFAD" }} justifyContent ="center">
+          <Grid item xs={12} lg ={5} sx={{marginTop:10}}>
+          <Parallax translateX={[-50, 35]}>
             <Paper>
-              <Stack sx={{fontFamily: "Boogaloo",maringLeft: 10,position:"relative" }}>
-                <h1>About Me</h1>
+              <Stack
+                sx={{
+                  fontFamily: "Boogaloo",
+                  paddingLeft: 10,
+                  position: "relative",
+                }}
+                justifyContent="center"
+                className = "About"
+              >
+                <h1 style={{fontSize:"3em",textAlign: "center"}}>About Me</h1>
                 <h1>Name: Akkarawit Sittiprakan</h1>
                 <h1>Age: 18 years old</h1>
-                <h1> Education: Informaiton technology KMUTT </h1>
+                <h1> Education: Information technology KMUTT </h1>
                 <h1> Skills : Programming,Design,Analytic </h1>
-               
-                </Stack>
+              </Stack>
             </Paper>
+          </Parallax>
+          </Grid>
+          <Grid item sx ={{marginTop: 20}}>
+            <Image src={Plane} width={200} height={200}/>
+
           </Grid>
         </Grid>
       </ParallaxProvider>

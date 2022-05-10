@@ -32,3 +32,6 @@ html,body {
 .Hero:hover .stats {
   opacity: 1;
 }
+.About{
+  font-size: 18px;
+}
