@@ -13,6 +13,7 @@ import Droll from "../styles/image/droll.svg";
 import Plane from "../styles/svg/plane.svg";
 import Welcome from "../components/Welcome";
 import Room from "../components/Room";
+import skill from "../styles/image/window.png";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
@@ -133,7 +134,7 @@ const Home: NextPage = () => {
         </Grid>
         <Grid container sx={{ backgroundColor: "#ACFFAD" }} justifyContent ="center">
           <Grid item xs={12} lg ={5} sx={{marginTop:10}}>
-          <Parallax translateX={[-50, 35]}>
+          <Parallax translateX={[30, -35]}>
             <Paper>
               <Stack
                 sx={{
@@ -154,10 +155,29 @@ const Home: NextPage = () => {
           </Parallax>
           </Grid>
           <Grid item sx ={{marginTop: 20}}>
+          <Parallax translateY={[0, 100]} >
             <Image src={Plane} width={200} height={200}/>
+          </Parallax>
 
           </Grid>
+          
         </Grid>
+        <Grid container sx={{ backgroundColor:"#54436B"}}>
+            <Grid item xs={12} lg={6} >
+              <Paper sx={{marginTop:60,backgroundImage:`url('https://www.img.in.th/images/dd8732440b02cad86566389f342c8350.jpg')` }}>
+                
+              <h1>ssdfsdfdf</h1>
+              <h1>ssdfsdfdf</h1>
+              <h1>ssdfsdfdf</h1>
+              <h1>ssdfsdfdf</h1>
+              <h1>ssdfsdfdf</h1>
+              <h1>ssdfsdfdf</h1>
+                
+
+              </Paper>
+              
+              </Grid>
+          </Grid>
       </ParallaxProvider>
     </div>
   );
