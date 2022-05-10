@@ -10,10 +10,11 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import Droll from "../styles/image/droll.svg";
+import Boy from "../styles/svg/boy.svg";
 import Plane from "../styles/svg/plane.svg";
 import Welcome from "../components/Welcome";
 import Room from "../components/Room";
-import skill from "../styles/image/window.png";
+import Bermuda from "../styles/svg/bermuda.svg";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
@@ -132,52 +133,67 @@ const Home: NextPage = () => {
             </Parallax>
           </Grid>
         </Grid>
-        <Grid container sx={{ backgroundColor: "#ACFFAD" }} justifyContent ="center">
-          <Grid item xs={12} lg ={5} sx={{marginTop:10}}>
-          <Parallax translateX={[30, -35]}>
-            <Paper>
-              <Stack
-                sx={{
-                  fontFamily: "Boogaloo",
-                  paddingLeft: 10,
-                  position: "relative",
-                }}
-                justifyContent="center"
-                className = "About"
-              >
-                <h1 style={{fontSize:"3em",textAlign: "center"}}>About Me</h1>
-                <h1>Name: Akkarawit Sittiprakan</h1>
-                <h1>Age: 18 years old</h1>
-                <h1> Education: Information technology KMUTT </h1>
-                <h1> Skills : Programming,Design,Analytic </h1>
-              </Stack>
-            </Paper>
-          </Parallax>
-          </Grid>
-          <Grid item sx ={{marginTop: 20}}>
-          <Parallax translateY={[0, 100]} >
-            <Image src={Plane} width={200} height={200}/>
-          </Parallax>
-
-          </Grid>
-          
-        </Grid>
-        <Grid container sx={{ backgroundColor:"#54436B"}}>
-            <Grid item xs={12} lg={6} >
-              <Paper sx={{marginTop:60,backgroundImage:`url('https://www.img.in.th/images/dd8732440b02cad86566389f342c8350.jpg')` }}>
-                
-              <h1>ssdfsdfdf</h1>
-              <h1>ssdfsdfdf</h1>
-              <h1>ssdfsdfdf</h1>
-              <h1>ssdfsdfdf</h1>
-              <h1>ssdfsdfdf</h1>
-              <h1>ssdfsdfdf</h1>
-                
-
+        <Grid
+          container
+          sx={{ backgroundColor: "#ACFFAD" }}
+          justifyContent="center"
+        >
+          <Grid item xs={12} lg={5} sx={{ marginTop: 10 }}>
+            <Parallax translateX={[30, -35]}>
+              <Paper>
+                <Stack
+                  sx={{
+                    fontFamily: "Boogaloo",
+                    paddingLeft: 10,
+                    position: "relative",
+                  }}
+                  justifyContent="center"
+                  className="About"
+                >
+                  <h1 style={{ fontSize: "3em", textAlign: "center" }}>
+                    About Me
+                  </h1>
+                  <h1>Name: Akkarawit Sittiprakan</h1>
+                  <h1>Age: 18 years old</h1>
+                  <h1> Education: Information technology KMUTT </h1>
+                  <h1> Skills : Programming,Design,Analytic </h1>
+                </Stack>
               </Paper>
-              
-              </Grid>
+            </Parallax>
           </Grid>
+          <Grid item sx={{ marginTop: 20 }}>
+            <Parallax translateY={[0, 312]}>
+              <Image src={Plane} width={200} height={200} />
+            </Parallax>
+          </Grid>
+        </Grid>
+        <Grid container sx={{ backgroundColor: "#54436B" }}>
+          <Box className="Window">
+            <Image src={Bermuda} width={460} height={315} />
+          </Box>
+          <Grid item xs={12} lg={6}>
+            <Parallax translateX={[-100, 220]}>
+              <Box>
+                <Box className="Boy">
+                  <Image src={Boy} width={200} height={200} />
+                </Box>
+                <Paper
+                  sx={{
+                    marginTop: 0,
+                    backgroundImage: `url('https://www.img.in.th/images/dd8732440b02cad86566389f342c8350.jpg')`,
+                  }}
+                >
+                  <h1>ssdfsdfdf</h1>
+                  <h1>ssdfsdfdf</h1>
+                  <h1>ssdfsdfdf</h1>
+                  <h1>ssdfsdfdf</h1>
+                  <h1>ssdfsdfdf</h1>
+                  <h1>ssdfsdfdf</h1>
+                </Paper>
+              </Box>
+            </Parallax>
+          </Grid>
+        </Grid>
       </ParallaxProvider>
     </div>
   );
