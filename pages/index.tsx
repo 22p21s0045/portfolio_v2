@@ -221,6 +221,7 @@ const Home: NextPage = () => {
                         />
                       </Box>
                       <Box className="Skill-tag">
+                      <h1 style={{ fontFamily: "Boogaloo" }}>Beginner</h1>
                         <h1 style={{ fontFamily: "Boogaloo" }}>Python</h1>
                       </Box>
                     </Paper>
@@ -238,12 +239,21 @@ const Home: NextPage = () => {
                         height={100}
                       />
                     </Paper>
+
                   </Stack>
                 </Paper>
               </Box>
             </Parallax>
           </Grid>
+         
+
         </Grid>
+        <h1>HH</h1>
+          <h1>HH</h1>
+          <h1>HH</h1>
+          <h1>HH</h1>
+          <h1>HH</h1>
+          <h1>HH</h1>
       </ParallaxProvider>
     </div>
   );
