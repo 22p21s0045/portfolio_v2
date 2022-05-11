@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css";
 import ProgressBar from "@ramonak/react-progress-bar";
 import Navbar from "../components/Navbar";
 import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
 import Typewriter from "typewriter-effect";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
@@ -162,7 +163,7 @@ const Home: NextPage = () => {
             </Parallax>
           </Grid>
           <Grid item sx={{ marginTop: 20 }}>
-            <Parallax translateY={[0, 312]}>
+            <Parallax translateY={[0, 280]}>
               <Image src={Plane} width={200} height={200} />
             </Parallax>
           </Grid>
@@ -172,7 +173,7 @@ const Home: NextPage = () => {
             <Image src={Bermuda} width={460} height={315} />
           </Box>
           <Grid item xs={12} lg={6}>
-            <Parallax translateX={[-100, 220]}>
+            <Parallax translateX={[-100, 195]}>
               <Box>
                 <Box className="Boy">
                   <Image src={Boy} width={200} height={200} />
@@ -180,15 +181,64 @@ const Home: NextPage = () => {
                 <Paper
                   sx={{
                     marginTop: 0,
-                    backgroundImage: `url('https://www.img.in.th/images/dd8732440b02cad86566389f342c8350.jpg')`,
+                    backgroundImage: `url('https://www.img.in.th/images/64983a4a85d67de8ebb9ef96448710d2.jpg')`,
+                    backgroundSize: "955px 500px",
                   }}
                 >
-                  <h1>ssdfsdfdf</h1>
-                  <h1>ssdfsdfdf</h1>
-                  <h1>ssdfsdfdf</h1>
-                  <h1>ssdfsdfdf</h1>
-                  <h1>ssdfsdfdf</h1>
-                  <h1>ssdfsdfdf</h1>
+                  <Stack direction="row">
+                    <h1 style={{ marginLeft: 45, fontFamily: "Boogaloo" }}>
+                      My favorite tools
+                    </h1>
+                    <Button
+                      className="Button"
+                      style={{ marginLeft: "20%" }}
+                      disableElevation={true}
+                    >
+                      Programming
+                    </Button>
+                    <Button
+                      className="Button"
+                      style={{ marginLeft: "20%" }}
+                      disableElevation={true}
+                    >
+                      Design
+                    </Button>
+                  </Stack>
+                  <Stack
+                    direction="row"
+                    sx={{
+                      marginTop: "10%",
+                    }}
+                    spacing={5}
+                    justifyContent="center"
+                  >
+                    <Paper className="Skill-box">
+                      <Box className="floating-img">
+                        <Image
+                          src={require("../styles/icon/python.png")}
+                          width={100}
+                          height={100}
+                        />
+                      </Box>
+                      <Box className="Skill-tag">
+                        <h1 style={{ fontFamily: "Boogaloo" }}>Python</h1>
+                      </Box>
+                    </Paper>
+                    <Paper>
+                      <Image
+                        src={require("../styles/icon/python.png")}
+                        width={100}
+                        height={100}
+                      />
+                    </Paper>
+                    <Paper>
+                      <Image
+                        src={require("../styles/icon/python.png")}
+                        width={100}
+                        height={100}
+                      />
+                    </Paper>
+                  </Stack>
                 </Paper>
               </Box>
             </Parallax>
