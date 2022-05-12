@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Head from "next/head";
-import { InferGetStaticPropsType,GetStaticProps } from 'next'
+import { InferGetStaticPropsType, GetStaticProps } from "next";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import ProgressBar from "@ramonak/react-progress-bar";
@@ -23,8 +23,9 @@ import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
-const Home: NextPage = ({data}:InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(data.data);
+
+const Home: NextPage = ({ data }: any) => {
+  console.log(data);
   const animation = useAnimation();
   const { ref, inView } = useInView();
   useEffect(() => {
@@ -215,86 +216,65 @@ const Home: NextPage = ({data}:InferGetStaticPropsType<typeof getStaticProps>) =
                     spacing={5}
                     justifyContent="center"
                   >
-                    {data.data.skills.data.map((item) => {
+                    {data.skills.data.map((item: any) => {
                       return (
                         <Paper className="Skill-box">
-                        <Box className="floating-img">
-                          <Image
-                            src={require("../styles/icon/python.png")}
-                            width={100}
-                            height={100}
-                          />
-                        </Box>
-                        <Box className="Skill-tag">
-                        <h1 style={{ fontFamily: "Boogaloo" }}>Beginner</h1>
-                          <h1 style={{ fontFamily: "Boogaloo" }}>Python</h1>
-                        </Box>
-                      </Paper>
+                          <Box className="floating-img">
+                            <Image
+                              src={require("../styles/icon/python.png")}
+                              width={100}
+                              height={100}
+                            />
+                          </Box>
+                          <Box className="Skill-tag">
+                            <h1 style={{ fontFamily: "Boogaloo" }}>Beginner</h1>
+                            <h1 style={{ fontFamily: "Boogaloo" }}>Python</h1>
+                          </Box>
+                        </Paper>
                       );
-
                     })}
-                   
-                    <Paper>
-                      <Image
-                        src={require("../styles/icon/python.png")}
-                        width={100}
-                        height={100}
-                      />
-                    </Paper>
-                    <Paper>
-                      <Image
-                        src={require("../styles/icon/python.png")}
-                        width={100}
-                        height={100}
-                      />
-                    </Paper>
-
                   </Stack>
                 </Paper>
               </Box>
             </Parallax>
           </Grid>
-         
-
         </Grid>
         <h1>HH</h1>
-          <h1>HH</h1>
-          <h1>HH</h1>
-          <h1>HH</h1>
-          <h1>HH</h1>
-          <h1>HH</h1>
+        <h1>HH</h1>
+        <h1>HH</h1>
+        <h1>HH</h1>
+        <h1>HH</h1>
+        <h1>HH</h1>
       </ParallaxProvider>
     </div>
   );
 };
-export async function getStaticProps():GetStaticProps {
+export async function getStaticProps() {
   const client = new ApolloClient({
     uri: "http://localhost:1337/graphql",
     cache: new InMemoryCache(),
   });
-  const { data } = await client.query(
-    {
-      query:gql`
-      query Getskill{
-  skills{
-    data{
-      attributes{
-        Name
-        tag
-        Icon{
-          data{
-            attributes{
-              url
+  const { data } = await client.query({
+    query: gql`
+      query Getskill {
+        skills {
+          data {
+            attributes {
+              Name
+              tag
+              Icon {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
             }
           }
-          }
         }
-        
       }
-    }
-  
-  }`,
-})
+    `,
+  });
   return {
     props: {
       data: data,
