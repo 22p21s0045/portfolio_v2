@@ -221,14 +221,14 @@ const Home: NextPage = ({ data }: any) => {
                         <Paper className="Skill-box">
                           <Box className="floating-img">
                             <Image
-                              src={require("../styles/icon/python.png")}
+                              src={`${process.env.NEXT_PUBLIC_URL}${item.attributes.Icon.data.attributes.url}`}
                               width={100}
                               height={100}
                             />
                           </Box>
                           <Box className="Skill-tag">
-                            <h1 style={{ fontFamily: "Boogaloo" }}>Beginner</h1>
-                            <h1 style={{ fontFamily: "Boogaloo" }}>Python</h1>
+                            <h1 style={{ fontFamily: "Boogaloo" }}>{item.attributes.level}</h1>
+                            <h1 style={{ fontFamily: "Boogaloo" }}>{item.attributes.Name}</h1>
                           </Box>
                         </Paper>
                       );
@@ -262,6 +262,7 @@ export async function getStaticProps() {
             attributes {
               Name
               tag
+              level
               Icon {
                 data {
                   attributes {
