@@ -3,6 +3,7 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Head from "next/head";
 import { InferGetStaticPropsType, GetStaticProps } from "next";
 import Image from "next/image";
+import Link from 'next/link'
 import styles from "../styles/Home.module.css";
 import ProgressBar from "@ramonak/react-progress-bar";
 import Navbar from "../components/Navbar";
@@ -25,7 +26,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 
 const Home: NextPage = ({ data }: any) => {
-  console.log(data);
+  
   const [skill,setskill] = useState("Programming");
   const animation = useAnimation();
   const { ref, inView } = useInView();
@@ -190,7 +191,7 @@ const Home: NextPage = ({ data }: any) => {
                     backgroundSize: "955px 500px",
                   }}
                 >
-                  <Stack direction="row">
+                  <Stack direction="row" >
                     <h1 style={{ marginLeft: 45, fontFamily: "Boogaloo" }}>
                       My favorite tools
                     </h1>
@@ -204,7 +205,7 @@ const Home: NextPage = ({ data }: any) => {
                     </Button>
                     <Button
                       className="Button"
-                      style={{ marginLeft: "20%" }}
+                      style={{ marginLeft: "5%" }}
                       disableElevation={true}
                       onClick={() => {setskill("Design")}}
                     >
@@ -238,6 +239,11 @@ const Home: NextPage = ({ data }: any) => {
                         </Paper>
                       );}
                     })}
+                  </Stack>
+                  <Stack justifyContent="center" alignItems="center"sx={{marginTop:10}}>
+                    <Link href="https://github.com/22p21s0045">
+                    <Button className="Button"sx={{width:176}}>More</Button>
+                    </Link>
                   </Stack>
                 </Paper>
               </Box>
