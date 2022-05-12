@@ -30,6 +30,7 @@ const Home: NextPage = ({ data }: any) => {
   const [skill,setskill] = useState("Programming");
   const animation = useAnimation();
   const { ref, inView } = useInView();
+  console.table(data);
   useEffect(() => {
     if (inView) {
       animation.start({
@@ -179,7 +180,7 @@ const Home: NextPage = ({ data }: any) => {
             <Image src={Bermuda} width={460} height={315} />
           </Box>
           <Grid item xs={12} lg={6}>
-            <Parallax translateX={[-100, 195]}>
+            <Parallax translateX={[-100, 150]}>
               <Box>
                 <Box className="Boy">
                   <Image src={Boy} width={200} height={200} />
@@ -224,7 +225,7 @@ const Home: NextPage = ({ data }: any) => {
                       if(item.attributes.tag === skill){
 
                       return (
-                        <Paper className="Skill-box">
+                        <Paper className="Skill-box" key={item.id}>
                           <Box className="floating-img">
                             <Image
                               src={`${process.env.NEXT_PUBLIC_URL}${item.attributes.Icon.data.attributes.url}`}
@@ -270,6 +271,7 @@ export async function getStaticProps() {
       query Getskill {
         skills {
           data {
+            id
             attributes {
               Name
               tag
