@@ -26,6 +26,7 @@ import { Parallax } from "react-scroll-parallax";
 
 const Home: NextPage = ({ data }: any) => {
   console.log(data);
+  const [skill,setskill] = useState("Programming");
   const animation = useAnimation();
   const { ref, inView } = useInView();
   useEffect(() => {
@@ -197,6 +198,7 @@ const Home: NextPage = ({ data }: any) => {
                       className="Button"
                       style={{ marginLeft: "20%" }}
                       disableElevation={true}
+                      onClick={() => {setskill("Programming")}}
                     >
                       Programming
                     </Button>
@@ -204,6 +206,7 @@ const Home: NextPage = ({ data }: any) => {
                       className="Button"
                       style={{ marginLeft: "20%" }}
                       disableElevation={true}
+                      onClick={() => {setskill("Design")}}
                     >
                       Design
                     </Button>
@@ -217,6 +220,8 @@ const Home: NextPage = ({ data }: any) => {
                     justifyContent="center"
                   >
                     {data.skills.data.map((item: any) => {
+                      if(item.attributes.tag === skill){
+
                       return (
                         <Paper className="Skill-box">
                           <Box className="floating-img">
@@ -231,7 +236,7 @@ const Home: NextPage = ({ data }: any) => {
                             <h1 style={{ fontFamily: "Boogaloo" }}>{item.attributes.Name}</h1>
                           </Box>
                         </Paper>
-                      );
+                      );}
                     })}
                   </Stack>
                 </Paper>
