@@ -3,7 +3,7 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Head from "next/head";
 import { InferGetStaticPropsType, GetStaticProps } from "next";
 import Image from "next/image";
-import Link from 'next/link'
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import ProgressBar from "@ramonak/react-progress-bar";
 import Navbar from "../components/Navbar";
@@ -24,10 +24,10 @@ import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
-
+import Lottie from "lottie-react";
+import Bat from "../styles/lottie/bat.json";
 const Home: NextPage = ({ data }: any) => {
-  
-  const [skill,setskill] = useState("Programming");
+  const [skill, setskill] = useState("Programming");
   const animation = useAnimation();
   const { ref, inView } = useInView();
   console.table(data);
@@ -176,8 +176,11 @@ const Home: NextPage = ({ data }: any) => {
           </Grid>
         </Grid>
         <Grid container sx={{ backgroundColor: "#54436B" }}>
+        <Lottie animationData={Bat} loop={true}/>
           <Box className="Window">
+         
             <Image src={Bermuda} width={460} height={315} />
+           
           </Box>
           <Grid item xs={12} lg={6}>
             <Parallax translateX={[-100, 150]}>
@@ -192,7 +195,7 @@ const Home: NextPage = ({ data }: any) => {
                     backgroundSize: "955px 500px",
                   }}
                 >
-                  <Stack direction="row" >
+                  <Stack direction="row">
                     <h1 style={{ marginLeft: 45, fontFamily: "Boogaloo" }}>
                       My favorite tools
                     </h1>
@@ -200,7 +203,9 @@ const Home: NextPage = ({ data }: any) => {
                       className="Button"
                       style={{ marginLeft: "20%" }}
                       disableElevation={true}
-                      onClick={() => {setskill("Programming")}}
+                      onClick={() => {
+                        setskill("Programming");
+                      }}
                     >
                       Programming
                     </Button>
@@ -208,7 +213,9 @@ const Home: NextPage = ({ data }: any) => {
                       className="Button"
                       style={{ marginLeft: "5%" }}
                       disableElevation={true}
-                      onClick={() => {setskill("Design")}}
+                      onClick={() => {
+                        setskill("Design");
+                      }}
                     >
                       Design
                     </Button>
@@ -222,28 +229,38 @@ const Home: NextPage = ({ data }: any) => {
                     justifyContent="center"
                   >
                     {data.skills.data.map((item: any) => {
-                      if(item.attributes.tag === skill){
-
-                      return (
-                        <Paper className="Skill-box" key={item.id}>
-                          <Box className="floating-img">
-                            <Image
-                              src={`${process.env.NEXT_PUBLIC_URL}${item.attributes.Icon.data.attributes.url}`}
-                              width={100}
-                              height={100}
-                            />
-                          </Box>
-                          <Box className="Skill-tag">
-                            <h1 style={{ fontFamily: "Boogaloo" }}>{item.attributes.level}</h1>
-                            <h1 style={{ fontFamily: "Boogaloo" }}>{item.attributes.Name}</h1>
-                          </Box>
-                        </Paper>
-                      );}
+                      if (item.attributes.tag === skill) {
+                        return (
+                          <Paper className="Skill-box" key={item.id}>
+                            <Box className="floating-img">
+                              <Image
+                                src={`${process.env.NEXT_PUBLIC_URL}${item.attributes.Icon.data.attributes.url}`}
+                                width={100}
+                                height={100}
+                              />
+                            </Box>
+                            <Box className="Skill-tag">
+                              <h1 style={{ fontFamily: "Boogaloo" }}>
+                                {item.attributes.level}
+                              </h1>
+                              <h1 style={{ fontFamily: "Boogaloo" }}>
+                                {item.attributes.Name}
+                              </h1>
+                            </Box>
+                          </Paper>
+                        );
+                      }
                     })}
                   </Stack>
-                  <Stack justifyContent="center" alignItems="center"sx={{marginTop:10}}>
+                  <Stack
+                    justifyContent="center"
+                    alignItems="center"
+                    sx={{ marginTop: 10 }}
+                  >
                     <Link href="https://github.com/22p21s0045">
-                    <Button className="Button"sx={{width:176}}>More</Button>
+                      <Button className="Button" sx={{ width: 176 }}>
+                        More
+                      </Button>
                     </Link>
                   </Stack>
                 </Paper>
@@ -251,12 +268,9 @@ const Home: NextPage = ({ data }: any) => {
             </Parallax>
           </Grid>
         </Grid>
-        <h1>HH</h1>
-        <h1>HH</h1>
-        <h1>HH</h1>
-        <h1>HH</h1>
-        <h1>HH</h1>
-        <h1>HH</h1>
+        <Grid container>
+
+        </Grid>
       </ParallaxProvider>
     </div>
   );
