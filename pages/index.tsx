@@ -19,6 +19,7 @@ import Plane from "../styles/svg/plane.svg";
 import Welcome from "../components/Welcome";
 import Room from "../components/Room";
 import Bermuda from "../styles/svg/bermuda.svg";
+import Astronaut from "../styles/svg/red.svg";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
@@ -176,11 +177,9 @@ const Home: NextPage = ({ data }: any) => {
           </Grid>
         </Grid>
         <Grid container sx={{ backgroundColor: "#54436B" }}>
-        <Lottie animationData={Bat} loop={true}/>
+          <Lottie animationData={Bat} loop={true} />
           <Box className="Window">
-         
             <Image src={Bermuda} width={460} height={315} />
-           
           </Box>
           <Grid item xs={12} lg={6}>
             <Parallax translateX={[-100, 150]}>
@@ -268,8 +267,60 @@ const Home: NextPage = ({ data }: any) => {
             </Parallax>
           </Grid>
         </Grid>
-        <Grid container>
+        <Grid container justifyContent="center">
+          <Box sx={{ position: "absolute", left: "5%" }}>
+            <Parallax translateY={[-100, 100]}>
+              <Image src={Astronaut} width={300} height={300} />
+            </Parallax>
+          </Box>
 
+          <Grid item sx={{ marginTop: 30 }}>
+            <Parallax
+              translateX={[-400, 0]}
+              scale={[0.75, 2]}
+              rotate={[-160, 10]}
+              easing="easeInQuad"
+            >
+              <h1>Activity</h1>
+            </Parallax>
+
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+            <h1>Activity</h1>
+          </Grid>
         </Grid>
       </ParallaxProvider>
     </div>
