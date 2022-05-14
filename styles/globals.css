@@ -100,3 +100,6 @@ font-size:24px;
   background-color: #7579FF;
   color: black;
 }
+.swiper-slide {
+  width: 10px;
+}

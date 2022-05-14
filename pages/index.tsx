@@ -275,7 +275,7 @@ const Home: NextPage = ({ data }: any) => {
             </Parallax>
           </Grid>
         </Grid>
-        <Grid container justifyContent="center">
+        <Grid container justifyContent="center" alignItems="center">
           <Box sx={{ position: "absolute", left: "5%" }}>
             <Parallax translateY={[-100, 100]}>
               <Image src={Astronaut} width={300} height={300} />
@@ -292,7 +292,7 @@ const Home: NextPage = ({ data }: any) => {
               <h1>Activity</h1>
             </Parallax>
           </Grid>
-          <Grid item xs={12} sx={{ marginTop: 100 }}>
+          <Grid item xs={12} sx={{ marginTop: 50 }}>
             <Swiper
               // install Swiper modules
               modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -303,8 +303,65 @@ const Home: NextPage = ({ data }: any) => {
               scrollbar={{ draggable: true }}
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log("slide change")}
+              breakpoints={{
+                // when window width is >= 320px
+                320: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                // when window width is >= 480px
+                480: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                // when window width is >= 640px
+                640: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                  width: 1000,
+
+                }
+              }}
             >
-              <SwiperSlide>
+              <SwiperSlide className="swiper-slide" >
+                <Card sx={{ border: "3px solid" }}>
+                  <CardMedia
+                    component="img"
+                    height="200"
+                    width="200"
+                    image="https://medias.thansettakij.com/uploads/images/md/2022/05/O5lWbUQnmY5TaFOQVr5T.webp?x-image-process=style/lg"
+                    alt="green iguana"
+                  ></CardMedia>
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div" sx={{fontFamily: "Source Code Pro"}}>
+                      Botnoi marahackathon
+                    </Typography>
+                    <Typography
+                      gutterBottom
+                      variant="subtitle2"
+                      component="div"
+                      sx={{fontFamily: "Source Code Pro",fontWeight:"bold"}}
+                    >
+                      1 st runner up
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button
+                      size="small"
+                      sx={{ backgroundColor: "#3C3C43", color: "white",fontFamily: "Source Code Pro" }}
+                      disableElevation={true}
+                      className="Button-More"
+                    >
+                      More
+                    </Button>
+                  </CardActions>
+                </Card>
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slide" >
                 <Card sx={{ border: "3px solid" }}>
                   <CardMedia
                     component="img"
