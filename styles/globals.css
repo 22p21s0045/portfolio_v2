@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&family=Source+Code+Pro:wght@300&display=swap');
 body{
   overflow-x: hidden;
  
@@ -96,3 +96,7 @@ font-size:24px;
   opacity: 1;
 }
 
+.Button-More:hover{
+  background-color: #7579FF;
+  color: black;
+}
