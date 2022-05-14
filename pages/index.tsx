@@ -13,6 +13,11 @@ import Typewriter from "typewriter-effect";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
+import Card from '@mui/material/Card';
+import Typography from '@mui/material/Typography';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import Droll from "../styles/image/droll.svg";
 import Boy from "../styles/svg/boy.svg";
 import Plane from "../styles/svg/plane.svg";
@@ -27,6 +32,9 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 import Lottie from "lottie-react";
 import Bat from "../styles/lottie/bat.json";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
 const Home: NextPage = ({ data }: any) => {
   const [skill, setskill] = useState("Programming");
   const animation = useAnimation();
@@ -283,43 +291,40 @@ const Home: NextPage = ({ data }: any) => {
             >
               <h1>Activity</h1>
             </Parallax>
+          </Grid>
+          <Grid item xs={12} sx={{marginTop:100}}>
+          <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      spaceBetween={50}
+      slidesPerView={3}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      <SwiperSlide>
+        <Card sx={{border:"3px solid"}}>
+          <CardMedia component="img"
+        height="200"
+        image="https://medias.thansettakij.com/uploads/images/md/2022/05/O5lWbUQnmY5TaFOQVr5T.webp?x-image-process=style/lg"
+        alt="green iguana">
+            
+          </CardMedia>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Botnoi marahackathon
+            </Typography>
+          </CardContent>
 
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
+        </Card>
+      </SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+      <SwiperSlide>Slide 4</SwiperSlide>
+      ...
+    </Swiper>
           </Grid>
         </Grid>
       </ParallaxProvider>
