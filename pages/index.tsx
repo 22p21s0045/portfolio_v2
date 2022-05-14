@@ -306,7 +306,7 @@ const Home: NextPage = ({ data }: any) => {
               breakpoints={{
                 // when window width is >= 320px
                 320: {
-                  slidesPerView: 1,
+                  slidesPerView: 2,
                   spaceBetween: 20,
                 },
                 // when window width is >= 480px
@@ -321,8 +321,9 @@ const Home: NextPage = ({ data }: any) => {
                 },
                 768: {
                   slidesPerView: 3,
-                  spaceBetween: 20,
-                  width: 1000,
+                  spaceBetween: 300,
+                  width: 1700,
+                 
 
                 }
               }}
