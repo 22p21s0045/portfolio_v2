@@ -35,11 +35,11 @@ import Bat from "../styles/lottie/bat.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
-const Home: NextPage = ({ data }: any) => {
+const Home: NextPage = ({ data,activity }: any) => {
   const [skill, setskill] = useState("Programming");
   const animation = useAnimation();
   const { ref, inView } = useInView();
-  console.table(data);
+  console.table(activity);
   useEffect(() => {
     if (inView) {
       animation.start({
@@ -435,9 +435,24 @@ export async function getStaticProps() {
       }
     `,
   });
+  const activity = await client.query({
+    query: gql`query GetActivity {
+      activities {
+        data {
+          id
+          attributes {
+            name
+            rank
+          }
+        }
+      }
+    }`
+  })
+
   return {
     props: {
       data: data,
+      activity: activity
     },
   };
 }
