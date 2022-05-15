@@ -35,7 +35,7 @@ import Lottie from "lottie-react";
 import Bat from "../styles/lottie/bat.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-
+import Iot from "../components/Iot";
 const Home: NextPage = ({ data, activity }: any) => {
   const [skill, setskill] = useState("Programming");
   const animation = useAnimation();
@@ -392,7 +392,16 @@ const Home: NextPage = ({ data, activity }: any) => {
               })}
             </Swiper>
           </Grid>
+
         </Grid>
+        <Grid container>
+          <Grid item xs={12}>
+            <Iot/>
+
+            </Grid>
+
+        </Grid>
+
       </ParallaxProvider>
     </div>
   );
