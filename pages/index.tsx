@@ -25,6 +25,7 @@ import Welcome from "../components/Welcome";
 import Room from "../components/Room";
 import Bermuda from "../styles/svg/bermuda.svg";
 import Astronaut from "../styles/svg/red.svg";
+import CatAs from "../styles/svg/cat-astro.svg";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
@@ -275,14 +276,27 @@ const Home: NextPage = ({ data, activity }: any) => {
             </Parallax>
           </Grid>
         </Grid>
-        <Grid container justifyContent="center" alignItems="center">
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"
+          sx={{ backgroundColor: "black" }}
+        >
+          <Box sx={{position:"absolute",right: "10%",display: "block"}}>
+            <motion.div animate ={{y:[0,10,0]}} transition ={{ type: "spring", stiffness: 100,repeat:Infinity,duration:4 }}>
+            <Image src={CatAs} width={500} height={500} priority />
+
+            </motion.div>
+            
+          </Box>
+
           <Box sx={{ position: "absolute", left: "5%" }}>
             <Parallax translateY={[-100, 100]}>
               <Image src={Astronaut} width={300} height={300} />
             </Parallax>
           </Box>
 
-          <Grid item sx={{ marginTop: 30 }}>
+          <Grid item sx={{ marginTop: 30, color: "white" }}>
             <Parallax
               translateX={[-400, 0]}
               scale={[0.75, 2]}
@@ -355,7 +369,7 @@ const Home: NextPage = ({ data, activity }: any) => {
                             fontWeight: "bold",
                           }}
                         >
-                          1 st runner up
+                          {item.attributes.rank}
                         </Typography>
                       </CardContent>
                       <CardActions>
