@@ -13,6 +13,11 @@ import Typewriter from "typewriter-effect";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
+import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
 import Droll from "../styles/image/droll.svg";
 import Boy from "../styles/svg/boy.svg";
 import Plane from "../styles/svg/plane.svg";
@@ -27,11 +32,14 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 import Lottie from "lottie-react";
 import Bat from "../styles/lottie/bat.json";
-const Home: NextPage = ({ data }: any) => {
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+
+const Home: NextPage = ({ data, activity }: any) => {
   const [skill, setskill] = useState("Programming");
   const animation = useAnimation();
   const { ref, inView } = useInView();
-  console.table(data);
+  console.table(activity.data);
   useEffect(() => {
     if (inView) {
       animation.start({
@@ -267,7 +275,7 @@ const Home: NextPage = ({ data }: any) => {
             </Parallax>
           </Grid>
         </Grid>
-        <Grid container justifyContent="center">
+        <Grid container justifyContent="center" alignItems="center">
           <Box sx={{ position: "absolute", left: "5%" }}>
             <Parallax translateY={[-100, 100]}>
               <Image src={Astronaut} width={300} height={300} />
@@ -283,43 +291,92 @@ const Home: NextPage = ({ data }: any) => {
             >
               <h1>Activity</h1>
             </Parallax>
-
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
-            <h1>Activity</h1>
+          </Grid>
+          <Grid item xs={12} sx={{ marginTop: 50 }}>
+            <Swiper
+              // install Swiper modules
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={50}
+              slidesPerView={3}
+              navigation
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              onSwiper={(swiper) => console.log(swiper)}
+              onSlideChange={() => console.log("slide change")}
+              breakpoints={{
+                // when window width is >= 320px
+                320: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                // when window width is >= 480px
+                480: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                // when window width is >= 640px
+                640: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 300,
+                  width: 1700,
+                },
+              }}
+            >
+              {activity.data.activities.data.map((item: any) => {
+                return (
+                  <SwiperSlide className="swiper-slide" key={item.id}>
+                    <Card sx={{ border: "3px solid" }}>
+                      <CardMedia
+                        component="img"
+                        height="200"
+                        width="200"
+                        image={`${process.env.NEXT_PUBLIC_URL}${item.attributes.cover.data.attributes.url}`}
+                        alt="green iguana"
+                      ></CardMedia>
+                      <CardContent>
+                        <Typography
+                          gutterBottom
+                          variant="h5"
+                          component="div"
+                          sx={{ fontFamily: "Source Code Pro" }}
+                        >
+                          {item.attributes.title}
+                        </Typography>
+                        <Typography
+                          gutterBottom
+                          variant="subtitle2"
+                          component="div"
+                          sx={{
+                            fontFamily: "Source Code Pro",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          1 st runner up
+                        </Typography>
+                      </CardContent>
+                      <CardActions>
+                        <Button
+                          size="small"
+                          sx={{
+                            backgroundColor: "#3C3C43",
+                            color: "white",
+                            fontFamily: "Source Code Pro",
+                          }}
+                          disableElevation={true}
+                          className="Button-More"
+                        >
+                          More
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
           </Grid>
         </Grid>
       </ParallaxProvider>
@@ -354,9 +411,33 @@ export async function getStaticProps() {
       }
     `,
   });
+  const activity = await client.query({
+    query: gql`
+      query GetActivity {
+        activities {
+          data {
+            id
+            attributes {
+              cover {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+              title
+              rank
+            }
+          }
+        }
+      }
+    `,
+  });
+
   return {
     props: {
       data: data,
+      activity: activity,
     },
   };
 }
