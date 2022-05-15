@@ -35,11 +35,11 @@ import Bat from "../styles/lottie/bat.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
-const Home: NextPage = ({ data,activity }: any) => {
+const Home: NextPage = ({ data, activity }: any) => {
   const [skill, setskill] = useState("Programming");
   const animation = useAnimation();
   const { ref, inView } = useInView();
-  console.table(activity);
+  console.table(activity.data);
   useEffect(() => {
     if (inView) {
       animation.start({
@@ -323,83 +323,59 @@ const Home: NextPage = ({ data,activity }: any) => {
                   slidesPerView: 3,
                   spaceBetween: 300,
                   width: 1700,
-                 
-
-                }
+                },
               }}
             >
-              <SwiperSlide className="swiper-slide" >
-                <Card sx={{ border: "3px solid" }}>
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    width="200"
-                    image="https://medias.thansettakij.com/uploads/images/md/2022/05/O5lWbUQnmY5TaFOQVr5T.webp?x-image-process=style/lg"
-                    alt="green iguana"
-                  ></CardMedia>
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" sx={{fontFamily: "Source Code Pro"}}>
-                      Botnoi marahackathon
-                    </Typography>
-                    <Typography
-                      gutterBottom
-                      variant="subtitle2"
-                      component="div"
-                      sx={{fontFamily: "Source Code Pro",fontWeight:"bold"}}
-                    >
-                      1 st runner up
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button
-                      size="small"
-                      sx={{ backgroundColor: "#3C3C43", color: "white",fontFamily: "Source Code Pro" }}
-                      disableElevation={true}
-                      className="Button-More"
-                    >
-                      More
-                    </Button>
-                  </CardActions>
-                </Card>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide" >
-                <Card sx={{ border: "3px solid" }}>
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    width="200"
-                    image="https://medias.thansettakij.com/uploads/images/md/2022/05/O5lWbUQnmY5TaFOQVr5T.webp?x-image-process=style/lg"
-                    alt="green iguana"
-                  ></CardMedia>
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" sx={{fontFamily: "Source Code Pro"}}>
-                      Botnoi marahackathon
-                    </Typography>
-                    <Typography
-                      gutterBottom
-                      variant="subtitle2"
-                      component="div"
-                      sx={{fontFamily: "Source Code Pro",fontWeight:"bold"}}
-                    >
-                      1 st runner up
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button
-                      size="small"
-                      sx={{ backgroundColor: "#3C3C43", color: "white",fontFamily: "Source Code Pro" }}
-                      disableElevation={true}
-                      className="Button-More"
-                    >
-                      More
-                    </Button>
-                  </CardActions>
-                </Card>
-              </SwiperSlide>
-              <SwiperSlide>Slide 2</SwiperSlide>
-              <SwiperSlide>Slide 3</SwiperSlide>
-              <SwiperSlide>Slide 4</SwiperSlide>
-              ...
+              {activity.data.activities.data.map((item: any) => {
+                return (
+                  <SwiperSlide className="swiper-slide" key={item.id}>
+                    <Card sx={{ border: "3px solid" }}>
+                      <CardMedia
+                        component="img"
+                        height="200"
+                        width="200"
+                        image={`${process.env.NEXT_PUBLIC_URL}${item.attributes.cover.data.attributes.url}`}
+                        alt="green iguana"
+                      ></CardMedia>
+                      <CardContent>
+                        <Typography
+                          gutterBottom
+                          variant="h5"
+                          component="div"
+                          sx={{ fontFamily: "Source Code Pro" }}
+                        >
+                          {item.attributes.title}
+                        </Typography>
+                        <Typography
+                          gutterBottom
+                          variant="subtitle2"
+                          component="div"
+                          sx={{
+                            fontFamily: "Source Code Pro",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          1 st runner up
+                        </Typography>
+                      </CardContent>
+                      <CardActions>
+                        <Button
+                          size="small"
+                          sx={{
+                            backgroundColor: "#3C3C43",
+                            color: "white",
+                            fontFamily: "Source Code Pro",
+                          }}
+                          disableElevation={true}
+                          className="Button-More"
+                        >
+                          More
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
           </Grid>
         </Grid>
@@ -436,23 +412,32 @@ export async function getStaticProps() {
     `,
   });
   const activity = await client.query({
-    query: gql`query GetActivity {
-      activities {
-        data {
-          id
-          attributes {
-            name
-            rank
+    query: gql`
+      query GetActivity {
+        activities {
+          data {
+            id
+            attributes {
+              cover {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+              title
+              rank
+            }
           }
         }
       }
-    }`
-  })
+    `,
+  });
 
   return {
     props: {
       data: data,
-      activity: activity
+      activity: activity,
     },
   };
 }
