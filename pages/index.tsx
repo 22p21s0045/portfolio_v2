@@ -39,7 +39,9 @@ import Iot from "../components/Iot";
 const Home: NextPage = ({ data, activity }: any) => {
   const [skill, setskill] = useState("Programming");
   const animation = useAnimation();
+  const astrounaut = useAnimation();
   const { ref, inView } = useInView();
+  const [ref2,inView2] = useInView();
   console.table(activity.data);
   useEffect(() => {
     if (inView) {
@@ -56,7 +58,11 @@ const Home: NextPage = ({ data, activity }: any) => {
       });
     }
     console.log(inView);
-  }, [inView]);
+    if (inView2) {
+      
+    }
+
+  }, [inView,inView2]);
   return (
     <div>
       <ParallaxProvider>
@@ -395,7 +401,7 @@ const Home: NextPage = ({ data, activity }: any) => {
 
         </Grid>
         <Grid container>
-          <Grid item xs={12}>
+          <Grid item xs={12} ref={ref2}>
             <Iot/>
 
             </Grid>
