@@ -36,12 +36,13 @@ import Bat from "../styles/lottie/bat.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import Iot from "../components/Iot";
+import Dev from "../components/Dev";
 const Home: NextPage = ({ data, activity }: any) => {
   const [skill, setskill] = useState("Programming");
   const animation = useAnimation();
-  const astrounaut = useAnimation();
+
   const { ref, inView } = useInView();
-  const [ref2,inView2] = useInView();
+  const [ref2, inView2] = useInView();
   console.table(activity.data);
   useEffect(() => {
     if (inView) {
@@ -58,11 +59,7 @@ const Home: NextPage = ({ data, activity }: any) => {
       });
     }
     console.log(inView);
-    if (inView2) {
-      
-    }
-
-  }, [inView,inView2]);
+  }, [inView]);
   return (
     <div>
       <ParallaxProvider>
@@ -288,12 +285,18 @@ const Home: NextPage = ({ data, activity }: any) => {
           alignItems="center"
           sx={{ backgroundColor: "black" }}
         >
-          <Box sx={{position:"absolute",right: "10%",display: "block"}}>
-            <motion.div animate ={{y:[0,10,0]}} transition ={{ type: "spring", stiffness: 100,repeat:Infinity,duration:4 }}>
-            <Image src={CatAs} width={500} height={500} priority />
-
+          <Box sx={{ position: "absolute", right: "10%", display: "block" }}>
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                repeat: Infinity,
+                duration: 4,
+              }}
+            >
+              <Image src={CatAs} width={500} height={500} priority />
             </motion.div>
-            
           </Box>
 
           <Box sx={{ position: "absolute", left: "5%" }}>
@@ -398,16 +401,32 @@ const Home: NextPage = ({ data, activity }: any) => {
               })}
             </Swiper>
           </Grid>
-
         </Grid>
-        <Grid container>
-          <Grid item xs={12} ref={ref2}>
-            <Iot/>
-
-            </Grid>
-
+        <Grid container sx={{ backgroundColor: "#C4DDFF" }}>
+          <Grid item xs={6} lg={4} md={4}>
+            <Box sx={{ position: "relative", display: "block", marginTop: 30 }}>
+              <Dev isview={inView2} />
+            </Box>
+          </Grid>
+          <Grid item xs={12} lg={4} md={4}>
+            <Button
+              className="Checkout"
+              sx={{
+                marginTop: 30,
+                marginLeft: 20,
+                fontFamily: "Boogaloo",
+                fontSize: 40,
+                backgroundColor: "#00185E",
+                color: "white",
+              }}
+            >
+              Check out me
+            </Button>
+          </Grid>
+          <Grid item xs={6} ref={ref2} lg={4} md={4}>
+            <Iot isview={inView2} />
+          </Grid>
         </Grid>
-
       </ParallaxProvider>
     </div>
   );

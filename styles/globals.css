@@ -103,3 +103,8 @@ font-size:24px;
 .swiper-slide {
   width: 10px;
 }
+.Checkout:hover{
+  background-color: #7579FF;
+  color: black;
+  border-radius: 10px;
+}
