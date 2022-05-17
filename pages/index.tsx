@@ -229,7 +229,7 @@ const Home: NextPage = ({ data, activity }: any) => {
                       My favorite tools
                     </h1>
                     <Button
-                      className="Button"
+                      className="Button-custom"
                       style={{ marginLeft: "20%" }}
                       disableElevation={true}
                       onClick={() => {
@@ -239,7 +239,7 @@ const Home: NextPage = ({ data, activity }: any) => {
                       Programming
                     </Button>
                     <Button
-                      className="Button"
+                      className="Button-custom"
                       style={{ marginLeft: "5%" }}
                       disableElevation={true}
                       onClick={() => {
@@ -287,7 +287,7 @@ const Home: NextPage = ({ data, activity }: any) => {
                     sx={{ marginTop: 10 }}
                   >
                     <Links href="https://github.com/22p21s0045">
-                      <Button className="Button" sx={{ width: 176 }}>
+                      <Button className="Button-custom" sx={{ width: 176 }}>
                         More
                       </Button>
                     </Links>
