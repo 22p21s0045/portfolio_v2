@@ -453,7 +453,7 @@ const Home: NextPage = ({ data, activity }: any) => {
 };
 export async function getStaticProps() {
   const client = new ApolloClient({
-    uri: "http://localhost:1337/graphql",
+    uri: `${process.env.NEXT_PUBLIC_URL}/graphql`,
     cache: new InMemoryCache(),
   });
   const { data } = await client.query({
