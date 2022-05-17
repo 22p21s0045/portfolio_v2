@@ -11,6 +11,7 @@ import Mail from "../styles/icon/footer/Mail.svg";
 function Footer() {
   return (
     <div>
+      <Box sx={{backgroundColor:"#C4DDFF"}}>
       <Container className="Footer" maxWidth={false}>
         <Grid container sx={{ paddingTop: 30 }} justifyContent="center">
           <Grid item xs={12} sm={6} lg={4} md={4} sx={{ textAlign: "center",fontSize:36,fontFamily:"Boogaloo",color: "white"}}>
@@ -37,6 +38,7 @@ function Footer() {
           </Grid>
         </Grid>
       </Container>
+      </Box>
     </div>
   );
 }
