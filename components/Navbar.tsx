@@ -7,6 +7,8 @@ import Grid from "@mui/material/Grid";
 import Image from "next/image";
 import Linkin from "../styles/icon/Linkedin.svg";
 import Github from "../styles/icon/GitHub.svg";
+import { Link } from "react-scroll";
+import Links from "next/link";
 function Navbar() {
   const buttonstyle = {
     fontFamily: "Boogaloo",
@@ -22,42 +24,65 @@ function Navbar() {
   };
   return (
     <div>
-      <AppBar position="static" elevation = {0}sx={{ backgroundColor: "transparent",paddingTop:5 }}>
+      <AppBar
+        position="static"
+        elevation={0}
+        sx={{ backgroundColor: "transparent", paddingTop: 5 }}
+      >
         <Grid container spacing={2} justifyContent="flex">
           <Grid item>
-            <Button variant="text" sx={buttonstyle}>
-              Home
-            </Button>
+            <Link to="home" spy={true} smooth={true} duration={500}>
+              <Button variant="text" sx={buttonstyle}>
+                Home
+              </Button>
+            </Link>
           </Grid>
           <Grid item>
-            <Button variant="text" sx={buttonstyle}>
-              About
-            </Button>
+            <Link to="about" spy={true} smooth={true} duration={500}>
+              <Button variant="text" sx={buttonstyle}>
+                About
+              </Button>
+            </Link>
           </Grid>
           <Grid item>
-            <Button variant="text" sx={buttonstyle}>
-              Skill
-            </Button>
+            <Link to="skill" spy={true} smooth={true} duration={500}>
+              <Button variant="text" sx={buttonstyle}>
+                Skill
+              </Button>
+            </Link>
           </Grid>
           <Grid item>
-            <Button variant="text" sx={buttonstyle}>
-              Activity
-            </Button>
+            <Link to="activity" spy={true} smooth={true} duration={500}>
+              <Button variant="text" sx={buttonstyle}>
+                Activity
+              </Button>
+            </Link>
           </Grid>
           <Grid item>
-            <Button variant="text" sx={buttonstyle}>
-              Checkout
-            </Button>
+            <Link to="checkout" spy={true} smooth={true} duration={500}>
+              <Button variant="text" sx={buttonstyle}>
+                Checkout
+              </Button>
+            </Link>
           </Grid>
         </Grid>
-        <Grid container spacing={2} justifyContent="flex-end" alignItems="center">
+        <Grid
+          container
+          spacing={2}
+          justifyContent="flex-end"
+          alignItems="center"
+        >
           <Grid item>
-            <Button variant="text" sx={buttonstyle}>
-              <Image src={Linkin} width={50} height={45} />
-            </Button>
-            <Button variant="text" sx={buttonstyle}>
-              <Image src={Github} width={50} height={45} />
-            </Button>
+            <Links href="https://www.linkedin.com/in/akkarawit-sittiprakan-58911523b/">
+              <Button variant="text" sx={buttonstyle}>
+                <Image src={Linkin} width={50} height={45} />
+              </Button>
+            </Links>
+            <Links href="https://github.com/22p21s0045">
+              <Button variant="text" sx={buttonstyle}>
+                <Image src={Github} width={50} height={45} />
+              </Button>
+            </Links>
           </Grid>
         </Grid>
       </AppBar>

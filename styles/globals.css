@@ -113,3 +113,10 @@ font-size:24px;
   background-size: cover;
   width: 100%;
 }
+.welcome:hover{
+  
+  font-family: 'Boogaloo';
+  color: black;
+  font-weight: bold;
+  background-color: #7579FF;
+}

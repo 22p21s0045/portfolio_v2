@@ -3,7 +3,7 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Head from "next/head";
 import { InferGetStaticPropsType, GetStaticProps } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import Links from "next/link";
 import styles from "../styles/Home.module.css";
 import ProgressBar from "@ramonak/react-progress-bar";
 import Navbar from "../components/Navbar";
@@ -38,6 +38,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import Iot from "../components/Iot";
 import Dev from "../components/Dev";
 import Footer from "../components/Footer";
+import {Link} from "react-scroll";
 const Home: NextPage = ({ data, activity }: any) => {
   const [skill, setskill] = useState("Programming");
   const animation = useAnimation();
@@ -66,18 +67,32 @@ const Home: NextPage = ({ data, activity }: any) => {
       <ParallaxProvider>
         <Navbar />
 
-        <Grid container sx={{ marginTop: 20 }}>
-          <Grid item xs={6} sx={{ marginLeft: 14 }}>
+        <Grid container sx={{ marginTop: 20 }} id="home">
+          <Grid item xs={12} lg={6} sx={{ marginLeft: 14 }}>
             <Box sx={{ fontFamily: "Boogaloo", fontSize: 76 }}>
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter.typeString("Welcome to my place").start();
                 }}
               />
+              <Link to="me" spy={true} smooth={true} duration={500}>
+              <Button
+                sx={{
+                  backgroundColor: "#273036",
+                  borderRadius: 10,
+                  color: "white",
+                  fontFamily: "Boogaloo",
+                  fontSize: 20,
+                }}
+                className="welcome"
+              >
+                GO
+              </Button>
+              </Link>
             </Box>
           </Grid>
-          <Grid item xs={6}>
-            <Box sx={{ marginTop: 0 }}>
+          <Grid item xs={12} lg={5}>
+            <Box sx={{ paddingTop: 0 }}>
               <Welcome />
             </Box>
           </Grid>
@@ -87,6 +102,7 @@ const Home: NextPage = ({ data, activity }: any) => {
           sx={{ backgroundColor: "#50CB93" }}
           alignItems="center"
           justifyContent="center"
+          id ="me"
         >
           <Grid item lg={6} xs={12} md={5}>
             <Parallax translateY={[20, -40]}>
@@ -159,6 +175,7 @@ const Home: NextPage = ({ data, activity }: any) => {
           container
           sx={{ backgroundColor: "#ACFFAD" }}
           justifyContent="center"
+          id="about"
         >
           <Grid item xs={12} lg={5} sx={{ marginTop: 10 }}>
             <Parallax translateX={[30, -35]}>
@@ -189,7 +206,7 @@ const Home: NextPage = ({ data, activity }: any) => {
             </Parallax>
           </Grid>
         </Grid>
-        <Grid container sx={{ backgroundColor: "#54436B" }}>
+        <Grid container sx={{ backgroundColor: "#54436B" }} id="skill">
           <Lottie animationData={Bat} loop={true} />
           <Box className="Window">
             <Image src={Bermuda} width={460} height={315} />
@@ -269,11 +286,11 @@ const Home: NextPage = ({ data, activity }: any) => {
                     alignItems="center"
                     sx={{ marginTop: 10 }}
                   >
-                    <Link href="https://github.com/22p21s0045">
+                    <Links href="https://github.com/22p21s0045">
                       <Button className="Button" sx={{ width: 176 }}>
                         More
                       </Button>
-                    </Link>
+                    </Links>
                   </Stack>
                 </Paper>
               </Box>
@@ -285,6 +302,7 @@ const Home: NextPage = ({ data, activity }: any) => {
           justifyContent="center"
           alignItems="center"
           sx={{ backgroundColor: "black" }}
+          id ="activity"
         >
           <Box sx={{ position: "absolute", right: "10%", display: "block" }}>
             <motion.div
@@ -313,7 +331,7 @@ const Home: NextPage = ({ data, activity }: any) => {
               rotate={[-160, 10]}
               easing="easeInQuad"
             >
-              <h1>Activity</h1>
+              <h1 style={{ fontFamily: "Boogaloo" }}>Activity</h1>
             </Parallax>
           </Grid>
           <Grid item xs={12} sx={{ marginTop: 50 }}>
@@ -403,7 +421,7 @@ const Home: NextPage = ({ data, activity }: any) => {
             </Swiper>
           </Grid>
         </Grid>
-        <Grid container sx={{ backgroundColor: "#C4DDFF" }}>
+        <Grid container sx={{ backgroundColor: "#C4DDFF" }} id="checkout">
           <Grid item xs={6} lg={4} md={4}>
             <Box sx={{ position: "relative", display: "block", marginTop: 30 }}>
               <Dev isview={inView2} />
@@ -428,7 +446,7 @@ const Home: NextPage = ({ data, activity }: any) => {
             <Iot isview={inView2} />
           </Grid>
         </Grid>
-        <Footer/>
+        <Footer />
       </ParallaxProvider>
     </div>
   );
