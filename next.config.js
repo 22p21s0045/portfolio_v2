@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost'],
+    domains: ['localhost','https://portfolio2-database-8qhhg.ondigitalocean.app'],
   }
 }
 
