@@ -37,6 +37,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import Iot from "../components/Iot";
 import Dev from "../components/Dev";
+import Footer from "../components/Footer";
 const Home: NextPage = ({ data, activity }: any) => {
   const [skill, setskill] = useState("Programming");
   const animation = useAnimation();
@@ -427,6 +428,7 @@ const Home: NextPage = ({ data, activity }: any) => {
             <Iot isview={inView2} />
           </Grid>
         </Grid>
+        <Footer/>
       </ParallaxProvider>
     </div>
   );

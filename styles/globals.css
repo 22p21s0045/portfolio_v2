@@ -108,3 +108,8 @@ font-size:24px;
   color: black;
   border-radius: 10px;
 }
+.Footer{
+  background-image: url(../styles/svg/footer.svg);
+  background-size: cover;
+  width: 100%;
+}
