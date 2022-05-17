@@ -7,7 +7,7 @@ import Image from "next/image";
 import Bmc from "../styles/icon/bmc.svg";
 import Stack from "@mui/material/Stack";
 import Github from "../styles/icon/footer/github.svg";
-import Linkedin from "../styles/icon/footer/Linkedin.svg";
+import Linkedin from "../styles/icon/footer/Linke.svg";
 import Mail from "../styles/icon/footer/Mail.svg";
 import Link from "next/link";
 function Footer() {
