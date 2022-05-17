@@ -141,7 +141,7 @@ function Iot({ isview }: isviews) {
           d="M606.195 296.568L601.206 294.414L596.798 297.698L597.089 291.776L592.875 288.116L598.058 286.608L599.898 281.01L602.805 286.07L608.133 286.285L604.742 290.861L606.195 296.568Z"
           stroke="#E8E8E8"
           strokeWidth="3"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <motion.path
           variants={pathVariants}
@@ -524,7 +524,7 @@ function Iot({ isview }: isviews) {
           fill="white"
           stroke="#161616"
           strokeWidth="2"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <motion.path
           variants={pathVariants}
@@ -532,7 +532,7 @@ function Iot({ isview }: isviews) {
           fill="white"
           stroke="#161616"
           strokeWidth="2"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <motion.path
           variants={pathVariants}
@@ -725,7 +725,7 @@ function Iot({ isview }: isviews) {
           fill="white"
           stroke="#161616"
           strokeWidth="2"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <motion.path
           variants={pathVariants}
@@ -918,7 +918,7 @@ function Iot({ isview }: isviews) {
           fill="white"
           stroke="#161616"
           strokeWidth="2"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <motion.path
           variants={pathVariants}
@@ -1006,7 +1006,7 @@ function Iot({ isview }: isviews) {
           fill="#161616"
           stroke="#161616"
           strokeWidth="2"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <motion.path
           variants={pathVariants}
@@ -1014,7 +1014,7 @@ function Iot({ isview }: isviews) {
           fill="white"
           stroke="#161616"
           strokeWidth="2"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <motion.path
           variants={pathVariants}
@@ -1122,7 +1122,7 @@ function Iot({ isview }: isviews) {
           fill="white"
           stroke="#161616"
           strokeWidth="2"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <motion.path
           variants={pathVariants}
@@ -1405,7 +1405,7 @@ function Iot({ isview }: isviews) {
           fill="white"
           stroke="#161616"
           strokeWidth="2"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <motion.path
           variants={pathVariants}
@@ -1528,7 +1528,7 @@ function Iot({ isview }: isviews) {
           fill="white"
           stroke="#161616"
           strokeWidth="2"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <motion.path
           variants={pathVariants}
