@@ -38,7 +38,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import Iot from "../components/Iot";
 import Dev from "../components/Dev";
 import Footer from "../components/Footer";
-import {Link} from "react-scroll";
+import { Link } from "react-scroll";
 const Home: NextPage = ({ data, activity }: any) => {
   const [skill, setskill] = useState("Programming");
   const animation = useAnimation();
@@ -76,18 +76,18 @@ const Home: NextPage = ({ data, activity }: any) => {
                 }}
               />
               <Link to="me" spy={true} smooth={true} duration={500}>
-              <Button
-                sx={{
-                  backgroundColor: "#273036",
-                  borderRadius: 10,
-                  color: "white",
-                  fontFamily: "Boogaloo",
-                  fontSize: 20,
-                }}
-                className="welcome"
-              >
-                GO
-              </Button>
+                <Button
+                  sx={{
+                    backgroundColor: "#273036",
+                    borderRadius: 10,
+                    color: "white",
+                    fontFamily: "Boogaloo",
+                    fontSize: 20,
+                  }}
+                  className="welcome"
+                >
+                  GO
+                </Button>
               </Link>
             </Box>
           </Grid>
@@ -102,7 +102,7 @@ const Home: NextPage = ({ data, activity }: any) => {
           sx={{ backgroundColor: "#50CB93" }}
           alignItems="center"
           justifyContent="center"
-          id ="me"
+          id="me"
         >
           <Grid item lg={6} xs={12} md={5}>
             <Parallax translateY={[20, -40]}>
@@ -231,7 +231,6 @@ const Home: NextPage = ({ data, activity }: any) => {
                     <Button
                       className="Button-custom"
                       style={{ marginLeft: "20%" }}
-                      disableElevation={true}
                       onClick={() => {
                         setskill("Programming");
                       }}
@@ -241,7 +240,6 @@ const Home: NextPage = ({ data, activity }: any) => {
                     <Button
                       className="Button-custom"
                       style={{ marginLeft: "5%" }}
-                      disableElevation={true}
                       onClick={() => {
                         setskill("Design");
                       }}
@@ -302,7 +300,7 @@ const Home: NextPage = ({ data, activity }: any) => {
           justifyContent="center"
           alignItems="center"
           sx={{ backgroundColor: "black" }}
-          id ="activity"
+          id="activity"
         >
           <Box sx={{ position: "absolute", right: "10%", display: "block" }}>
             <motion.div
