@@ -70,8 +70,12 @@ const Home: NextPage = ({ data, activity }: any) => {
           name="google-site-verification"
           content="nK5xkv6pKqugeDb_iK4-x29xYdsPRd64-c3cfeKt0yk"
         />
+        <meta name="description" content="Portfolio Akkarawit" />
+        <meta name="keywords" content="Portfolio, Akkarawit, Web Developer" />
+        <meta name="author" content="Akkarawit Sittiprakan" />
         <title>My portfolio</title>
         <link rel="shortcut icon" href="/favicon.ico" />
+
       </Head>
       <ParallaxProvider>
         <Navbar />
