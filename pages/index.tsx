@@ -62,23 +62,13 @@ const Home: NextPage = ({ data, activity }: any) => {
     }
     console.log(inView);
   }, [inView]);
-  const buttonstyle = {
-    fontFamily: "Boogaloo",
-    fontSize: 24,
-    backgroundColor: "#7579FF",
-    color: "#fff",
-    borderRadius: 10,
-    boxshadow: "4px 5px 0px #B224EF",
-    marginTop: "2%",
-    "&:hover": {
-      backgroundColor: "#B224EF",
-      color: "black",
-      boxshadow: "4px 5px 0px #B224EF",
-    },
-  };
 
   return (
     <div>
+      <Head>
+        <title>My portfolio</title>
+        <link rel="shortcut icon" href="/favicon.ico" />
+      </Head>
       <ParallaxProvider>
         <Navbar />
 
@@ -102,9 +92,8 @@ const Home: NextPage = ({ data, activity }: any) => {
                       backgroundColor: "#B224EF",
                       color: "black",
                       boxshadow: "4px 5px 0px #B224EF",
-                    }
+                    },
                   }}
-                 
                 >
                   GO
                 </Button>
@@ -257,7 +246,8 @@ const Home: NextPage = ({ data, activity }: any) => {
                         color: "#fff",
                         borderRadius: 10,
                         boxshadow: "4px 5px 0px #B224EF",
-                        marginTop: "2%",
+                        marginTop: "5%",
+
                         "&:hover": {
                           backgroundColor: "#B224EF",
                           color: "black",
@@ -278,7 +268,7 @@ const Home: NextPage = ({ data, activity }: any) => {
                         color: "#fff",
                         borderRadius: 10,
                         boxshadow: "4px 5px 0px #B224EF",
-                        marginTop: "2%",
+                        marginTop: "5%",
                         marginLeft: "5%",
                         "&:hover": {
                           backgroundColor: "#B224EF",
@@ -296,7 +286,7 @@ const Home: NextPage = ({ data, activity }: any) => {
                   <Stack
                     direction="row"
                     sx={{
-                      marginTop: "10%",
+                      marginTop: "15%",
                     }}
                     spacing={5}
                     justifyContent="center"
@@ -332,7 +322,6 @@ const Home: NextPage = ({ data, activity }: any) => {
                   >
                     <Links href="https://github.com/22p21s0045">
                       <Button
-                       
                         sx={{
                           width: 176,
                           fontFamily: "Boogaloo",
