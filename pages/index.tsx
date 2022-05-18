@@ -241,7 +241,7 @@ const Home: NextPage = ({ data, activity }: any) => {
                   sx={{
                     marginTop: 0,
                     backgroundImage: `url('https://www.img.in.th/images/64983a4a85d67de8ebb9ef96448710d2.jpg')`,
-                    backgroundSize: "955px 500px",
+                    backgroundSize: "cover",
                   }}
                 >
                   <Stack direction="row">
@@ -252,7 +252,7 @@ const Home: NextPage = ({ data, activity }: any) => {
                       sx={{
                         fontFamily: "Boogaloo",
                         marginLeft: "10%",
-                        fontSize: 24,
+                        fontSize: 20,
                         backgroundColor: "#7579FF",
                         color: "#fff",
                         borderRadius: 10,
