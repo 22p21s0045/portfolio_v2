@@ -62,6 +62,21 @@ const Home: NextPage = ({ data, activity }: any) => {
     }
     console.log(inView);
   }, [inView]);
+  const buttonstyle = {
+    fontFamily: "Boogaloo",
+    fontSize: 24,
+    backgroundColor: "#7579FF",
+    color: "#fff",
+    borderRadius: 10,
+    boxshadow: "4px 5px 0px #B224EF",
+    marginTop: "2%",
+    "&:hover": {
+      backgroundColor: "#B224EF",
+      color: "black",
+      boxshadow: "4px 5px 0px #B224EF",
+    },
+  };
+
   return (
     <div>
       <ParallaxProvider>
@@ -83,8 +98,13 @@ const Home: NextPage = ({ data, activity }: any) => {
                     color: "white",
                     fontFamily: "Boogaloo",
                     fontSize: 20,
+                    "&:hover": {
+                      backgroundColor: "#B224EF",
+                      color: "black",
+                      boxshadow: "4px 5px 0px #B224EF",
+                    }
                   }}
-                  className="welcome"
+                 
                 >
                   GO
                 </Button>
@@ -229,8 +249,21 @@ const Home: NextPage = ({ data, activity }: any) => {
                       My favorite tools
                     </h1>
                     <Button
-                      className="Button-custom"
-                      style={{ marginLeft: "20%" }}
+                      sx={{
+                        fontFamily: "Boogaloo",
+                        marginLeft: "10%",
+                        fontSize: 24,
+                        backgroundColor: "#7579FF",
+                        color: "#fff",
+                        borderRadius: 10,
+                        boxshadow: "4px 5px 0px #B224EF",
+                        marginTop: "2%",
+                        "&:hover": {
+                          backgroundColor: "#B224EF",
+                          color: "black",
+                          boxshadow: "4px 5px 0px #B224EF",
+                        },
+                      }}
                       onClick={() => {
                         setskill("Programming");
                       }}
@@ -238,8 +271,21 @@ const Home: NextPage = ({ data, activity }: any) => {
                       Programming
                     </Button>
                     <Button
-                      className="Button-custom"
-                      style={{ marginLeft: "5%" }}
+                      sx={{
+                        fontFamily: "Boogaloo",
+                        fontSize: 24,
+                        backgroundColor: "#7579FF",
+                        color: "#fff",
+                        borderRadius: 10,
+                        boxshadow: "4px 5px 0px #B224EF",
+                        marginTop: "2%",
+                        marginLeft: "5%",
+                        "&:hover": {
+                          backgroundColor: "#B224EF",
+                          color: "black",
+                          boxshadow: "4px 5px 0px #B224EF",
+                        },
+                      }}
                       onClick={() => {
                         setskill("Design");
                       }}
@@ -285,7 +331,24 @@ const Home: NextPage = ({ data, activity }: any) => {
                     sx={{ marginTop: 10 }}
                   >
                     <Links href="https://github.com/22p21s0045">
-                      <Button className="Button-custom" sx={{ width: 176 }}>
+                      <Button
+                       
+                        sx={{
+                          width: 176,
+                          fontFamily: "Boogaloo",
+                          fontSize: 24,
+                          backgroundColor: "#7579FF",
+                          color: "#fff",
+                          borderRadius: 10,
+                          boxshadow: "4px 5px 0px #B224EF",
+                          marginTop: "2%",
+                          "&:hover": {
+                            backgroundColor: "#B224EF",
+                            color: "black",
+                            boxshadow: "4px 5px 0px #B224EF",
+                          },
+                        }}
+                      >
                         More
                       </Button>
                     </Links>

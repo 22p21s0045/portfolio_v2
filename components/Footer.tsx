@@ -66,6 +66,7 @@ function Footer() {
                   >
                     <img src="https://app.statuscake.com/button/index.php?Track=xcEpdVksmy&Days=1&Design=1" />
                   </a>
+                  <a href="https://www.digitalocean.com/?refcode=f852ac3e5abd&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg" alt="DigitalOcean Referral Badge" /></a>
                 </Box>
               </Stack>
             </Grid>
