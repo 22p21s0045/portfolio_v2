@@ -257,7 +257,8 @@ const Home: NextPage = ({ data, activity }: any) => {
                         color: "#fff",
                         borderRadius: 10,
                         boxshadow: "4px 5px 0px #B224EF",
-                        marginTop: "2%",
+                        marginTop: "5%",
+                        
                         "&:hover": {
                           backgroundColor: "#B224EF",
                           color: "black",
@@ -278,7 +279,7 @@ const Home: NextPage = ({ data, activity }: any) => {
                         color: "#fff",
                         borderRadius: 10,
                         boxshadow: "4px 5px 0px #B224EF",
-                        marginTop: "2%",
+                        marginTop: "5%",
                         marginLeft: "5%",
                         "&:hover": {
                           backgroundColor: "#B224EF",
@@ -296,7 +297,7 @@ const Home: NextPage = ({ data, activity }: any) => {
                   <Stack
                     direction="row"
                     sx={{
-                      marginTop: "10%",
+                      marginTop: "15%",
                     }}
                     spacing={5}
                     justifyContent="center"

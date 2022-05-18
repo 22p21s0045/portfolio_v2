@@ -29,7 +29,7 @@ function Navbar() {
         elevation={0}
         sx={{ backgroundColor: "transparent", paddingTop: 5 }}
       >
-        <Grid container spacing={2} justifyContent="flex">
+        <Grid container spacing={2} justifyContent="center">
           <Grid item>
             <Link to="home" spy={true} smooth={true} duration={500}>
               <Button variant="text" sx={buttonstyle}>
