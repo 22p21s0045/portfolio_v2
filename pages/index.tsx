@@ -66,6 +66,10 @@ const Home: NextPage = ({ data, activity }: any) => {
   return (
     <div>
       <Head>
+        <meta
+          name="google-site-verification"
+          content="nK5xkv6pKqugeDb_iK4-x29xYdsPRd64-c3cfeKt0yk"
+        />
         <title>My portfolio</title>
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
