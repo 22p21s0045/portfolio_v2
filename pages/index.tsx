@@ -565,6 +565,7 @@ export async function getStaticProps() {
       data: data,
       activity: activity,
     },
+    revalidate: 3600,
   };
 }
 
